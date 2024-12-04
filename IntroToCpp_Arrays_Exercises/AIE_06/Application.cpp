@@ -36,7 +36,10 @@ void Application::Load()
 	// value between 0 and 5 exclusive;
 	// -----------------------------------------------------
 	
-	// write your code here
+	for (int var : m_tiles)
+	{
+		m_tiles[var] = rand() % 5;
+	}
 
 	// -----------------------------------------------------
 }
