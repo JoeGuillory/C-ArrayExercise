@@ -57,11 +57,11 @@ void Application::Update(float deltaTime)
 
 		// Task 3:
 		// TODO: Calculate row and col index based on the mouse positon
-		int rowIndex = mousePos.x  / ROWS; 
-		int colIndex = mousePos.y / COLS;
+		int rowIndex = mousePos.x  / m_tileWidth; 
+		int colIndex = mousePos.y / m_tileHeight;
 
 		// TODO: calculate the index of the tile clicked on based on the row/col index
-		int tileIndex = rowIndex * colIndex;
+		int tileIndex = rowIndex * COLS + colIndex;
 
 		m_tiles[tileIndex] += 1;
 		if (m_tiles[tileIndex] >= 5)
