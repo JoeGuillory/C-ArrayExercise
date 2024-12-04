@@ -57,7 +57,7 @@ void Application::Update(float deltaTime)
 
 		// Task 3:
 		// TODO: Calculate row and col index based on the mouse positon
-		int rowIndex = mousePos.x / ROWS; 
+		int rowIndex = mousePos.x  / ROWS; 
 		int colIndex = mousePos.y / COLS;
 
 		// TODO: calculate the index of the tile clicked on based on the row/col index
@@ -88,19 +88,16 @@ void Application::Draw()
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			index = i * j;
-			
+			index++;
+			float xPos =  i * m_tileHeight;
+			float yPos =  j * m_tileWidth;
+			Color color = GetTileColor(m_tiles[index]); // pass in the tilevalue
+			DrawRectangle(xPos, yPos, m_tileWidth, m_tileHeight, color);
 		}
 		
 	}
-	float xPos = index * m_tileHeight;
-	float yPos = index * m_tileWidth;
 	
-	Color color = GetTileColor(m_tiles[index]); // pass in the tilevalue
-
-	DrawRectangle(xPos, yPos, m_tileWidth, m_tileHeight, color);
 	
-
 	// --------------------------------------------------------------------
 
 	EndDrawing();
