@@ -68,7 +68,7 @@ int main(int argc, char** argv)
 		"b0", "b1", "b2", "b3", "b4",
 		"c0", "c1", "c2", "c3", "c4"
 	};
-
+	std::cout << std::endl;
 	// Task 3:
 	// using a nested loop to iterate over rows/columns
 	// convert the row and column index to a single index value to print the values
@@ -84,7 +84,7 @@ int main(int argc, char** argv)
 		for (int colIndex = 0; colIndex < COLS; colIndex++)
 		{
 			// TODO: calculate "index" based on rowIndex/colIndex value
-			int index = colIndex * rowIndex; 
+			int index = rowIndex * COLS + colIndex; 
 
 			// use the resulting index to print the value
 			std::cout << grid1D[index] << ", ";
